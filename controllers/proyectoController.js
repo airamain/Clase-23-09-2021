@@ -72,7 +72,7 @@ exports.actualizarProyecto = async (req, res) => {
     try {
         // revisar el id 
         let proyecto = await Proyecto.findById({ _id: req.params.id });
-        console.log("proyecto findById: ", proyecto)
+
 
         // si el proyecto existe o no
         if (!proyecto) {
@@ -87,10 +87,10 @@ exports.actualizarProyecto = async (req, res) => {
         }
 
         // ahora actualizamos
-        console.log("req.params.id", req.params.id)
-        proyecto = await Proyecto.findByIdAndUpdate({ _id: req.params.id }, { set: proyectoActualizado }, { new: true });
 
-        res.json({ proyecto });
+        proyectoUpdate = await Proyecto.findOneAndUpdate({ _id: req.params.id }, { nombre: proyectoActualizado }, { new: true });
+      
+        res.json({ proyectoUpdate })
 
     } catch (error) {
         console.log(error);
