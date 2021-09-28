@@ -1,0 +1,32 @@
+Crear Api validaciones con express express-validator mongoose dotenv bcrypt jsonwebtoken
+
+1- inicializamos nuestro proyecto 
+	npm init, nos crea un archivo llamado packageJson
+	luego instalaremos algunas dependencias en modo desarrollo para eso es el parametro -D
+	npm i -D nodemon 
+	npm i express mongoose dotenv
+
+	
+
+2- Crear el Controller auth
+	Con bcrypt comparamos el pass haseado	
+	Tenemos que revisar que el usuario exista al iniciar sesion
+	comparar el pass y si todo eso es correcto crear el jwt
+	
+	
+3- Vamos a Crear un proyecto (.TAREA.)
+	Necesitamos Modelo
+	Ruta
+	Controller
+
+4- Validar usuario autenticado nuestro propio Middleware
+	con jwt
+	leer el token que viene en el header
+	verificar token
+	luego con express-validator en la ruta 
+	a continuacion en el controller del proyecto leemos el resultado de la validacion
+
+5- Obtener todos los proyectos del usuario autenticado
+	en proyecto en el controller
+
+
