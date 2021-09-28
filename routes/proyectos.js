@@ -34,4 +34,14 @@ router.get('/',
 //     proyectoController.getProyectos
 // )
 
+// update o put
+// api/proyectos
+router.put('/:id',
+    auth,
+    [
+        check('nombre','El nombre del proyecto es obligatorio').not().isEmpty()
+    ],
+    proyectoController.actualizarProyecto
+)
+
 module.exports = router;
