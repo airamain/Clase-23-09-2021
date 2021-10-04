@@ -1,4 +1,3 @@
-
 const express = require('express');
 const router = express.Router();
 const proyectoController = require('../controllers/proyectoController');
@@ -22,18 +21,6 @@ router.get('/',
     proyectoController.getProyectos
 )
 
-// actualizar proyecto seria un update "PUT"
-
-// tener en cuenta que segun nuestra regla de negocio
-// delete, como tal, que elimina el registro
-// o un update que seria cambiar algun valor de un atributo en nuestra db por "eliminado" bool 0/1
-// si hacemos o declaramos un metod "DELETE"
-
-// router.delete('/',
-//     auth,
-//     proyectoController.getProyectos
-// )
-
 // update o put
 // api/proyectos
 router.put('/:id',
@@ -43,5 +30,17 @@ router.put('/:id',
     ],
     proyectoController.actualizarProyecto
 )
+
+// Clase 30-09-2021
+// Eliminar un proyecto
+// api/proyectos
+router.delete('/:id',
+    auth,
+    [
+        check('nombre','El nombre del proyecto es obligatorio').not().isEmpty()
+    ],
+    proyectoController.eliminarProyecto
+)
+
 
 module.exports = router;
