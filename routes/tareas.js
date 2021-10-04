@@ -16,7 +16,7 @@ router.post('/',
     tareaController.crearTarea
 );
 
-// Obtener las tareas por proyecto
+// Obtener las tarea / as  por proyecto
 router.get('/',
     auth,
     [
