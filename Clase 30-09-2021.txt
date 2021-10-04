@@ -1,0 +1,55 @@
+A) Consultas de la clase anteriores 
+
+B) Eliminar un proyecto
+
+C) Tarea para hacer en grupo:
+    
+    1) hacer modelo Tarea:
+        nombre (string), 
+        estado (boolean),
+        fechaCreado (date), 
+        proyectoAlQuePertenecen(mongoose.Schema.Types.ObjectId ref: Proyectos)
+
+    2) Luego agegar el router de la Tarea en el index.js:
+     app.use('/api/tareas', require('./routes/tareas'))
+
+    3) Craar en la carpeta routes el archivo tareas.js 
+    aqui copiar de proyecto routes las primeras lineas 
+    
+    4) Crear tareaController.js en la carpeta Controllers 
+
+    5) importar modelo de Tarea:
+     IMPORTANTE, LAS TAREAS PERTENECEN A LOS PROECTOS,IMPORTAR MODELO PROYECTO
+    
+    6) Antes de crear una Tarea:
+        - Debemos asegurarnos que el proyecto existan
+        - Luego validar si el proyecto actual pertenece al usuario autenticado
+        - Creamos la tarea
+
+    hacer esto en el tareaController.js
+
+    7) probar con postman por ejemplo
+
+D) Obtener tareas o tarea por proyecto ( hacer esto en el tareaController.js )
+    1) extrar el id del proyecto que viene por body
+    2) comprobar si existe
+    3) validar si el proyecto actual pertenece al usuario autenticado
+    4) Obtener Tareas o Tarea por proyecto
+    5) no olvidar el auth en el routes de tarea.js nuestro Middleware
+    6) probar con postman por ejemplo
+
+E) Actualizar una tarea 
+    1) en la routes tareas.js hacer el put ('/:id') no olvidar auth y tareaController.actalizarTarea
+    2) en la tarea controller hacer el metodo actualizarTarea 
+    3) validar si la tarea existe o no (req.params.id)    
+    4) extraer el proyecto, nombre y estado, que viene por body !!!!
+    5) comprobar si existe
+    6) validar si el proyecto actual pertenece al usuario autenticado 
+    7) crear un objeto con la nueva informacion 
+    8) validar si viene nombre y estado para actualizar si es necesario  agregar a nuestro objeto
+    9) guardar la tarea ( "findOneAndUpdate({ _id: req.params.id }, "objeto(7)", { new: true } )" )
+    10) enviar tarea al frond. Probar con postman por ejemplo
+
+
+
+    
